@@ -1,10 +1,16 @@
 #!/usr/bin/python
-import sys
 
+import sys
+import os
+import time
 from twython import Twython
+CONSUMER_KEY = 'SECRET'
+CONSUMER_SECRET = 'SECRET'
+ACCESS_KEY = 'SECRET'
+ACCESS_SECRET = 'SECRET'
 
 # your twitter access information goes here
-#
+
 apiKey = 'REPLACETHECODE'
 apiSecret = 'REPLACETHECODE'
 accessToken = 'REPLACETHECODE'
@@ -26,6 +32,9 @@ altitude = bmp.read_altitude()
 print 'Temperature: {0:0.1f} C'.format(temp)
 print 'Pressure:    {0:0.1f} Pa'.format(pressure)
 print 'Altitude:    {0:0.1f} m'.format(altitude)
- 
-twitter.update_status(status= temp,pressure,altitude)
+
+	api.update_status(status=temp+pressure+altitude)
+
+
+	time.sleep(1800)
 
